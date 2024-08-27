@@ -1,37 +1,58 @@
 @use "sass:map";
+@use "colors" as clr;
+@use "spacing" as sp;
 
-$self: (
-  primary: (
-    100: #fffdf5,
-    200: #fffbe5,
-    300: #e8e3da,
-    400: #6e6b67,
-  ),
-  accent: (
-    100: #e0efde,
-    200: #569573,
-    300: #406c55,
-  ),
-  neutral: (
-    100: #f8f9fa,
-    200: #dee2e6,
-    300: #adb5bd,
-    400: #6c757d,
-    500: #343a40,
-    600: #212529,
-  ),
-  others: (
-    info: #4a72ff,
-    success: #2cc585,
-    warning: #ffb054,
-    danger: #d65f5f,
-  ),
+$gray-100: map.get(clr.$neutral, 100);
+$gray-200: map.get(clr.$neutral, 200);
+$gray-300: map.get(clr.$neutral, 300);
+$gray-400: map.get(clr.$neutral, 400);
+$gray-500: map.get(clr.$neutral, 500);
+$gray-600: map.get(clr.$neutral, 600);
+
+$primary: map.get(clr.$accent, 200);
+$secondary: map.get(clr.$neutral, 400);
+$tertiary: map.get(clr.$neutral, 300);
+$success: clr.$success;
+$info: clr.$info;
+$warning: clr.$warning;
+$danger: clr.$danger;
+$light: map.get(clr.$neutral, 200);
+$dark: map.get(clr.$neutral, 500);
+$dim: map.get(clr.$neutral, 600);
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "tertiary": $tertiary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "dim": $dim,
 );
 
-$info: map.get($self, "others", "info");
-$success: map.get($self, "others", "success");
-$warning: map.get($self, "others", "warning");
-$danger: map.get($self, "others", "danger");
+$font-family-sans-serif: "Newsreader", "Noto Serif TC", system-ui, -apple-system,
+  "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial,
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+  "Noto Color Emoji";
+
+$box-shadow: 0 0.125rem 0.5rem 0 rgba(map.get(clr.$primary, 400), 0.08);
+
+$spacers: sp.$spacers;
+
+$navbar-light-color: map.get(clr.$neutral, 500);
+$navbar-light-toggler-icon-bg: url("/src/assets/images/icons/hamburger.svg");
+
+$line-height-sm: 1.2;
+
+$focus-ring-width: 0;
+$input-padding-y: 0;
+$input-padding-x: 0;
+$input-border-width: 0;
+$input-group-addon-color: map.get(clr.$neutral, 300);
+$input-group-addon-bg: map.get(clr.$neutral, "white");
 
 // Variables
 //

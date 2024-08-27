@@ -1,0 +1,24 @@
+@use "../abstract/sizes" as sz;
+
+.navbar {
+  &-toggler {
+    .navbar-toggler-icon {
+      inline-size: sz.$icon-size;
+      block-size: sz.$icon-size;
+    }
+  }
+
+  &-toggler[aria-expanded="true"] {
+    @extend .ms-auto;
+
+    .navbar-toggler-icon {
+      background-image: url("/src/assets/images/icons/close.svg");
+    }
+  }
+
+  .search-bar {
+    @include media-breakpoint-up(lg) {
+      max-inline-size: sz.$search-bar-inline-size;
+    }
+  }
+}

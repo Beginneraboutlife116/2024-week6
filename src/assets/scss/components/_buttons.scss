@@ -1,0 +1,78 @@
+@use "sass:map";
+@use "../abstract/colors" as clr;
+@use "../abstract/spacing" as sp;
+
+.custom-btn {
+  @include button-size(
+    map.get(sp.$spacers, 3),
+    map.get(sp.$spacers, 5),
+    $font-size-base,
+    $border-radius-pill
+  );
+
+  @include media-breakpoint-up(lg) {
+    @include button-size(
+      map.get(sp.$spacers, 4),
+      map.get(sp.$spacers, 6),
+      $font-size-lg,
+      $border-radius-pill
+    );
+  }
+}
+
+.custom-btn-primary {
+  @include button-variant(
+    $background: map.get(clr.$accent, 200),
+    $border: map.get(clr.$accent, 200),
+    $color: $white,
+    $hover-background: map.get(clr.$accent, 300),
+    $hover-border: map.get(clr.$accent, 300),
+    $hover-color: $white,
+    $active-background: map.get(clr.$accent, 300),
+    $active-border: map.get(clr.$accent, 300),
+    $active-color: $white,
+    $disabled-background: map.get(clr.$neutral, 200),
+    $disabled-border: map.get(clr.$neutral, 200),
+    $disabled-color: $white
+  );
+
+  line-height: 1.2;
+}
+
+.custom-btn-gray {
+  @include button-variant(
+    $background: map.get(clr.$neutral, 100),
+    $border: map.get(clr.$neutral, 100),
+    $color: map.get(clr.$neutral, 400),
+    $hover-background: map.get(clr.$neutral, 200),
+    $hover-border: map.get(clr.$neutral, 200),
+    $hover-color: map.get(clr.$neutral, 500),
+    $active-background: map.get(clr.$neutral, 200),
+    $active-border: map.get(clr.$neutral, 200),
+    $active-color: map.get(clr.$neutral, 500),
+    $disabled-background: map.get(clr.$neutral, 100),
+    $disabled-border: map.get(clr.$neutral, 100),
+    $disabled-color: map.get(clr.$neutral, 300)
+  );
+
+  line-height: 1.2;
+}
+
+.custom-btn-only-text {
+  @include button-variant(
+    $background: transparent,
+    $border: transparent,
+    $color: map.get(clr.$accent, 200),
+    $hover-background: transparent,
+    $hover-border: transparent,
+    $hover-color: map.get(clr.$accent, 300),
+    $active-background: transparent,
+    $active-border: transparent,
+    $active-color: map.get(clr.$accent, 300),
+    $disabled-background: transparent,
+    $disabled-border: transparent,
+    $disabled-color: map.get(clr.$neutral, 300)
+  );
+
+  line-height: 1.2;
+}

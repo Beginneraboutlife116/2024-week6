@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "../abstract/colors" as clr;
+@use "../abstract/spacing" as sp;
+
+body {
+  background-color: map.get(clr.$primary, 100);
+  padding-block-start: sp.$body-padding-block-start;
+
+  @include media-breakpoint-up(lg) {
+    padding-block-start: sp.$body-padding-block-start-lg;
+  }
+}
