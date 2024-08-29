@@ -14,7 +14,7 @@ export default function Layout() {
   return (
     <>
       <header className="fixed-top">
-        <div className="container">
+        <div className="container-fluid container-lg bg-milk">
           <nav
             className={clsx(
               "navbar navbar-expand-lg py-lg-9 pt-2 pb-1 border-bottom-lg border-tertiary",
@@ -26,7 +26,7 @@ export default function Layout() {
                   src={LogoLgPng}
                   alt="Vivre"
                   srcSet={`${LogoSmPng} 576w, ${LogoLgPng} 992w`}
-                  sizes="(max-width: 768px) 576px, 992px"
+                  sizes="(max-width: 992px) 576px, 992px"
                 />
               </NavLink>
             )}
@@ -42,19 +42,19 @@ export default function Layout() {
               <span className="navbar-toggler-icon"></span>
             </button>
             <div
-              className="collapse navbar-collapse justify-content-lg-between letter-spacing-text"
+              className="collapse navbar-collapse justify-content-lg-between"
               id="navbarSupportedContent">
               <form role="search" className="my-6 my-lg-0 | search-bar">
                 <div className="input-group border border-light ps-5 py-3 rounded-pill bg-white">
                   <span
                     className={clsx(
                       "input-group-text",
-                      isSearchFocused && "text-dim"
+                      isSearchFocused && "text-gunmetal"
                     )}>
                     搜尋文章
                   </span>
                   <input
-                    className="form-control px-3 text-dim-focus"
+                    className="form-control px-3 text-gunmetal-focus"
                     type="search"
                     aria-label="Search"
                     onFocus={() => setIsSearchFocused(true)}
@@ -65,7 +65,7 @@ export default function Layout() {
                   </button>
                 </div>
               </form>
-              <ul className="navbar-nav align-items-lg-center column-gap-5 row-gap-6 lh-sm letter-spacing-headings">
+              <ul className="navbar-nav align-items-lg-center column-gap-5 row-gap-6 lh-sm">
                 <li className="nav-item">
                   <NavLink
                     className="nav-link px-3 px-lg-5"

@@ -102,6 +102,36 @@ $utilities: map-merge(
             ),
         )
       ),
+    "rounded-x": (
+      property: border-top-left-radius border-bottom-right-radius,
+      class: "rounded-x",
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: 0.75rem,
+        5: var(--#{$prefix}border-radius-xl),
+        6: 1.25rem,
+        7: var(--#{$prefix}border-radius-xxl),
+      ),
+    ),
+    "rounded-y": (
+      property: border-top-right-radius border-bottom-left-radius,
+      class: "rounded-y",
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: 0.75rem,
+        5: var(--#{$prefix}border-radius-xl),
+        6: 1.25rem,
+        7: var(--#{$prefix}border-radius-xxl),
+      ),
+    ),
     "color":
       map-merge(
         map-get($utilities, "color"),
@@ -114,8 +144,9 @@ $utilities: map-merge(
       ),
     "letter-spacing": (
       property: letter-spacing,
-      class: letter-spacing,
+      class: "letter-spacing",
       values: (
+        0: 0,
         "text": 0.05em,
         "headings": 0.1em,
       ),
@@ -155,6 +186,13 @@ $utilities: map-merge(
           responsive: true,
         )
       ),
+    "position":
+      map-merge(
+        map-get($utilities, "position"),
+        (
+          responsive: true,
+        )
+      ),
   )
 );
 
@@ -164,5 +202,6 @@ $utilities: map-merge(
 
 // custom components and pages
 @import "base";
+@import "helpers";
 @import "components/buttons";
 @import "components/navbar";

@@ -17,8 +17,11 @@ $info: clr.$info;
 $warning: clr.$warning;
 $danger: clr.$danger;
 $light: map.get(clr.$neutral, 200);
+$milk: map.get(clr.$primary, 100);
+$coffee: map.get(clr.$primary, 300);
+$gray: map.get(clr.$primary, 400);
 $dark: map.get(clr.$neutral, 500);
-$dim: map.get(clr.$neutral, 600);
+$gunmetal: map.get(clr.$neutral, 600);
 
 $theme-colors: (
   "primary": $primary,
@@ -29,8 +32,11 @@ $theme-colors: (
   "warning": $warning,
   "danger": $danger,
   "light": $light,
+  "milk": $milk,
+  "coffee": $coffee,
+  "gray": $gray,
   "dark": $dark,
-  "dim": $dim,
+  "gunmetal": $gunmetal,
 );
 
 $font-family-sans-serif: "Newsreader", "Noto Serif TC", system-ui, -apple-system,
@@ -53,6 +59,8 @@ $input-padding-x: 0;
 $input-border-width: 0;
 $input-group-addon-color: map.get(clr.$neutral, 300);
 $input-group-addon-bg: map.get(clr.$neutral, "white");
+
+$enable-negative-margins: true;
 
 // Variables
 //

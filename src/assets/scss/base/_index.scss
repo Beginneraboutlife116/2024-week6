@@ -5,8 +5,18 @@
 body {
   background-color: map.get(clr.$primary, 100);
   padding-block-start: sp.$body-padding-block-start;
+  letter-spacing: 0.05em;
 
   @include media-breakpoint-up(lg) {
     padding-block-start: sp.$body-padding-block-start-lg;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0.1em;
 }

@@ -3,6 +3,11 @@
 @use "../abstract/spacing" as sp;
 
 .custom-btn {
+  display: flex;
+  align-items: center;
+  line-height: 1.2;
+  border: none;
+
   @include button-size(
     map.get(sp.$spacers, 3),
     map.get(sp.$spacers, 5),
@@ -35,8 +40,6 @@
     $disabled-border: map.get(clr.$neutral, 200),
     $disabled-color: $white
   );
-
-  line-height: 1.2;
 }
 
 .custom-btn-gray {
@@ -54,8 +57,6 @@
     $disabled-border: map.get(clr.$neutral, 100),
     $disabled-color: map.get(clr.$neutral, 300)
   );
-
-  line-height: 1.2;
 }
 
 .custom-btn-only-text {
@@ -73,6 +74,4 @@
     $disabled-border: transparent,
     $disabled-color: map.get(clr.$neutral, 300)
   );
-
-  line-height: 1.2;
 }
