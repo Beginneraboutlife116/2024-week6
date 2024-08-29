@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import {
   BannerSmPng,
   BannerPng,
+  ArrowLeftSvg,
+  ArrowRightSvg,
   ArrowRightWhiteSvg,
 
   // themes
@@ -22,6 +24,12 @@ import {
   Theme7SmPng,
   Theme8Png,
   Theme8SmPng,
+
+  // cards
+  CardArticle1Png,
+  CardArticle1SmPng,
+  CardArticle2Png,
+  CardArticle2SmPng,
 } from "../../assets/images";
 
 const themeData = [
@@ -91,6 +99,29 @@ const themeData = [
   },
 ];
 
+const articleData = [
+  {
+    id: 1,
+    title: "私人島嶼的露營奇遇記",
+    imageUrl: {
+      sm: CardArticle1SmPng,
+      lg: CardArticle1Png,
+    },
+    description:
+      "遠離塵囂,用全新的眼光重塑生活的舒適本味。徜徉在環山綠野間,在這處隱世私家別墅裡,盡情領略池畔優閒時光,任林間微風撫面,聆聽花鳥嘶啞之音,重拾內心深處的寧靜安詳...",
+  },
+  {
+    id: 2,
+    title: "窺探米其林三星主廚的絕密手藝",
+    imageUrl: {
+      sm: CardArticle2SmPng,
+      lg: CardArticle2Png,
+    },
+    description:
+      "在這間隱世餐廳,來一場味蕾與靈魂的盛宴。幽微燈火下,透過巨匠大師的獨門料理,領略食材中蘊藏的大自然馨香脈絡。營造只屬於你我的私密小宇宙,沉浸其中,品嘗人生至臻至美的風味...",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -150,6 +181,84 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+      <section className="py-12 py-lg-20">
+        <div className="container">
+          <div className="row justify-content-between position-relative pb-17 pb-lg-0">
+            <div className="col-lg-auto d-flex flex-column">
+              <h2 className="mb-6 mb-lg-auto">精選文章</h2>
+              <div
+                className="
+                d-flex
+                flex-lg-column
+                row-gap-8
+                position-absolute
+                position-lg-relative
+                bottom-0
+                start-0
+                end-0
+                w-lg-auto
+                justify-content-between
+                px-3
+                px-lg-0
+                ">
+                <span>
+                  1 <span className="text-tertiary d-inline-block mx-1">/</span>{" "}
+                  5
+                </span>
+                <div className="d-flex align-items-center column-gap-5">
+                  <button
+                    type="button"
+                    className="btn border rounded-pill border-secondary py-1 px-4">
+                    <img src={ArrowLeftSvg} alt="prev" />
+                  </button>
+                  <div
+                    className="inline-size flex-grow-1 flex-lg-shrink-0 block-size bg-dark"
+                    style={{
+                      "--inline-size": "80px",
+                      "--block-size": "1px",
+                    }}></div>
+                  <button
+                    type="button"
+                    className="btn border rounded-pill border-secondary py-1 px-4">
+                    <img src={ArrowRightSvg} alt="next" />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-8 d-flex column-gap-6 column-gap-lg-12 overflow-x-auto">
+              {articleData.map(({ id, title, imageUrl, description }) => (
+                <div
+                  className="card rounded-bottom-0 border-0 border-bottom border-dark bg-transparent w-100 w-lg-auto flex-shrink-0 flex-lg-shrink-1"
+                  key={id}>
+                  <picture>
+                    <source
+                      srcSet={`${imageUrl.lg} 404w`}
+                      media="(min-width: 992px)"
+                    />
+                    <img src={imageUrl.sm} className="card-img-top" alt="" />
+                  </picture>
+                  <div className="card-body px-0 pt-6 pb-7">
+                    <h5 className="card-title fw-bolder">{title}</h5>
+                    <p className="card-text mb-6 text-secondary fw-semibold">
+                      {description}
+                    </p>
+                    <a
+                      href="#"
+                      className="btn custom-btn-only-text p-0 d-flex justify-content-between align-items-start">
+                      <span className="fw-bold fs-5 letter-spacing-headings">
+                        Read More
+                      </span>
+                      <span className="badge bg-coffee text-gray fs-6 py-1 px-2">
+                        會員專屬
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
