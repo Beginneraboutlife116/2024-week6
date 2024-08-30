@@ -10,7 +10,7 @@ const PREFIX_CLASS = "banner";
 
 export default function HomeBanner() {
   return (
-    <section className={`container py-lg-20 ${PREFIX_CLASS}`}>
+    <section className={`container py-lg-20 | ${PREFIX_CLASS}`}>
       <div
         className="
         card
@@ -37,12 +37,33 @@ export default function HomeBanner() {
             ps-lg-15
             ">
           <h1 className="card-title text-center text-lg-start">
-            <p className="h6 h5-lg mb-2 mb-lg-3">獻給新世代的生活風格誌</p>
-            <p className="h3 h1-lg mb-3 mb-lg-4">一起探索生活的無限可能</p>
+            <p
+              className="
+              fs-6
+              fs-lg-5
+              fw-bolder
+              mb-2
+              mb-lg-3">
+              獻給新世代的生活風格誌
+            </p>
+            <p
+              className="
+              fs-3
+              fs-lg-1
+              fw-bolder
+              mb-3
+              mb-lg-4">
+              一起探索生活的無限可能
+            </p>
           </h1>
           <NavLink
             to="/subscribe"
-            className="btn custom-btn custom-btn-primary">
+            className="
+              btn
+              custom-btn
+              custom-btn-primary
+              fw-bolder
+            ">
             馬上訂閱
             <img src={ArrowRightWhiteSvg} alt="" className="ms-3" />
           </NavLink>
