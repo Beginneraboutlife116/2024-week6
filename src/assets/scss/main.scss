@@ -198,6 +198,21 @@ $utilities: map-merge(
       map-merge(
         map-get($utilities, "font-size"),
         (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "font-size"), "values"),
+              (
+                "0": 3.25rem,
+              )
+            ),
+          responsive: true,
+          rfs: false,
+        )
+      ),
+    "font-weight":
+      map-merge(
+        map-get($utilities, "font-weight"),
+        (
           responsive: true,
         )
       ),

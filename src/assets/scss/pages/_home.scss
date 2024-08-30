@@ -75,3 +75,51 @@
     }
   }
 }
+
+.life {
+  .card-list > li {
+    display: flex;
+    align-items: end;
+
+    &::before {
+      content: "|";
+      margin-inline: map-get($spacers, 1);
+    }
+  }
+
+  .card-img {
+    block-size: rem(192);
+  }
+
+  .decoration {
+    display: flex;
+    align-items: center;
+    color: $secondary;
+
+    > div {
+      inline-size: rem(80);
+      block-size: 1px;
+      margin-inline: map-get($spacers, 5);
+      background-color: $secondary;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      min-inline-size: rem(56);
+      background-position: center;
+      background-repeat: no-repeat;
+      padding-block: map-get($spacers, 4);
+      border: 1px solid $secondary;
+      border-radius: 99em;
+    }
+
+    &::before {
+      background-image: url("/src/assets/images/icons/arrow-left.svg");
+    }
+
+    &::after {
+      background-image: url("/src/assets/images/icons/arrow-right.svg");
+    }
+  }
+}

@@ -41,6 +41,12 @@ import CardHots2SmPng from "./cards/hots-2-sm.png";
 import CardHots3SmPng from "./cards/hots-3-sm.png";
 import CardHots4SmPng from "./cards/hots-4-sm.png";
 import CardHots5SmPng from "./cards/hots-5-sm.png";
+import CardLife1Png from "./cards/life-1.png";
+import CardLife1SmPng from "./cards/life-1-sm.png";
+import CardLife2Png from "./cards/life-2.png";
+import CardLife2SmPng from "./cards/life-2-sm.png";
+import CardLife3Png from "./cards/life-3.png";
+import CardLife3SmPng from "./cards/life-3-sm.png";
 
 export {
   LogoSmPng,
@@ -90,4 +96,10 @@ export {
   CardHots3SmPng,
   CardHots4SmPng,
   CardHots5SmPng,
+  CardLife1Png,
+  CardLife1SmPng,
+  CardLife2Png,
+  CardLife2SmPng,
+  CardLife3Png,
+  CardLife3SmPng,
 };

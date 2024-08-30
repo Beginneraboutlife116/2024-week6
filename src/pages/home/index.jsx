@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import clsx from "clsx";
 import Carousel from "bootstrap/js/dist/carousel";
 
+import LifeSection from "./life";
+
 import { useMediaQuery } from "../../lib/media-query-utils";
 
 import {
@@ -502,7 +504,7 @@ export default function Home() {
         <h2 className="mb-6 mb-lg-10">大家都在看</h2>
         <section className="row">
           <div className="d-none d-lg-block col-lg-3">
-            <div className="bg-white h-100 rounded-4">
+            <div className="bg-white h-100 rounded-4 shadow">
               <div className="list-group p-6 d-flex flex-column row-gap-6 fs-5">
                 {hotsData.map(({ id, title }, index) => (
                   <button
@@ -584,6 +586,7 @@ export default function Home() {
           </div>
         </section>
       </section>
+      <LifeSection />
     </>
   );
 }
