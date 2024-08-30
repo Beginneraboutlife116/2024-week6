@@ -1,6 +1,15 @@
 @use "../abstract/functions" as *;
 
 .home {
+  .featured-articles {
+    .decoration {
+      inline-size: rem(80);
+      block-size: 1px;
+      background-color: $secondary;
+      margin-inline: map-get($spacers, 5);
+    }
+  }
+
   .call-to-action {
     overflow: hidden;
 
