@@ -47,42 +47,32 @@ FeaturedArticlesSection.propTypes = propTypes;
 
 export default function FeaturedArticlesSection({ isLargeScreen = false }) {
   const [articleIndex, setArticleIndex] = useState(0);
-  const articlesCarouselRef = useRef(null);
-  const bootstrapArticlesCarouselRef = useRef(null);
+  const carouselRef = useRef(null);
+  const bootstrapCarouselRef = useRef(null);
 
   useEffect(() => {
-    if (articlesCarouselRef.current) {
-      bootstrapArticlesCarouselRef.current = new Carousel(
-        articlesCarouselRef.current,
-        {
-          touch: false,
-        }
-      );
+    if (carouselRef.current) {
+      bootstrapCarouselRef.current = new Carousel(carouselRef.current, {
+        touch: false,
+      });
     }
 
     return () => {
-      if (bootstrapArticlesCarouselRef.current) {
-        bootstrapArticlesCarouselRef.current.dispose();
+      if (bootstrapCarouselRef.current) {
+        bootstrapCarouselRef.current.dispose();
       }
     };
   }, []);
 
   useEffect(() => {
-    if (bootstrapArticlesCarouselRef.current) {
-      bootstrapArticlesCarouselRef.current.to(articleIndex);
+    if (bootstrapCarouselRef.current) {
+      bootstrapCarouselRef.current.to(articleIndex);
     }
   }, [articleIndex]);
 
   return (
     <section className={`container py-12 py-lg-20 | ${PREFIX_CLASS}`}>
-      <div
-        className="
-        row
-        justify-content-between
-        position-relative
-        pb-18
-        pb-lg-0
-        ">
+      <div className="row justify-content-between position-relative pb-18 pb-lg-0">
         <div className="col-lg-auto d-flex flex-column">
           <h2
             className="
@@ -94,21 +84,7 @@ export default function FeaturedArticlesSection({ isLargeScreen = false }) {
             ">
             精選文章
           </h2>
-          <div
-            className="
-                d-flex
-                align-items-center
-                justify-content-between
-                position-absolute
-                bottom-0
-                start-0
-                end-0
-                position-lg-relative
-                flex-lg-column
-                align-items-lg-start
-                px-3
-                px-lg-0
-                ">
+          <div className="d-flex align-items-center justify-content-between position-absolute bottom-0 start-0 end-0 position-lg-relative flex-lg-column align-items-lg-start px-3 px-lg-0">
             <span>
               {articleIndex + 1}{" "}
               <span className="text-tertiary d-inline-block mx-1">/</span>{" "}
@@ -146,7 +122,7 @@ export default function FeaturedArticlesSection({ isLargeScreen = false }) {
           </div>
         </div>
         <div className="col-lg-8 pb-lg-4">
-          <div ref={articlesCarouselRef} className="carousel slide">
+          <div ref={carouselRef} className="carousel slide">
             <div className="carousel-inner d-lg-flex">
               {articleData.map(
                 ({ id, title, images, description, onlyForMembers }, index) => (

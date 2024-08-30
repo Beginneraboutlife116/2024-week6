@@ -98,31 +98,31 @@ HotsSection.propTypes = propTypes;
 
 export default function HotsSection({ isLargeScreen = false }) {
   const [hotIndex, setHotIndex] = useState(0);
-  const hotsCarouselRef = useRef(null);
-  const bootstrapHotsCarouselRef = useRef(null);
+  const carouselRef = useRef(null);
+  const bootstrapCarouselRef = useRef(null);
 
   useEffect(() => {
-    if (hotsCarouselRef.current) {
-      bootstrapHotsCarouselRef.current = new Carousel(hotsCarouselRef.current, {
+    if (carouselRef.current) {
+      bootstrapCarouselRef.current = new Carousel(carouselRef.current, {
         interval: 2000,
         touch: true,
       });
     }
     return () => {
-      if (bootstrapHotsCarouselRef.current) {
-        bootstrapHotsCarouselRef.current.dispose();
+      if (bootstrapCarouselRef.current) {
+        bootstrapCarouselRef.current.dispose();
       }
     };
   }, []);
 
   useEffect(() => {
-    if (bootstrapHotsCarouselRef.current) {
+    if (bootstrapCarouselRef.current) {
       if (!isLargeScreen) {
-        bootstrapHotsCarouselRef.current.cycle();
+        bootstrapCarouselRef.current.cycle();
       } else {
-        bootstrapHotsCarouselRef.current.pause();
+        bootstrapCarouselRef.current.pause();
       }
-      bootstrapHotsCarouselRef.current.to(0);
+      bootstrapCarouselRef.current.to(0);
       setHotIndex(0);
     }
   }, [isLargeScreen]);
@@ -167,7 +167,7 @@ export default function HotsSection({ isLargeScreen = false }) {
                 )}
                 aria-current={hotIndex === index}
                 onClick={() => {
-                  bootstrapHotsCarouselRef.current.to(index);
+                  bootstrapCarouselRef.current.to(index);
                   setHotIndex(index);
                 }}>
                 {title}
@@ -176,7 +176,7 @@ export default function HotsSection({ isLargeScreen = false }) {
           </div>
         </div>
         <div className="col-lg-9">
-          <div ref={hotsCarouselRef} className="carousel slide">
+          <div ref={carouselRef} className="carousel slide">
             <div className="carousel-inner">
               {hotsData.map(
                 ({ id, title, descriptions, images, tags }, index) => (
@@ -188,16 +188,7 @@ export default function HotsSection({ isLargeScreen = false }) {
                     key={id}>
                     <div className="card p-4 rounded-4 border-0 shadow p-lg-10">
                       <div className="card-body p-0 px-lg-6 pt-lg-6">
-                        <h5
-                          className="
-                            card-title
-                            text-primary
-                            mb-3
-                            fs-5
-                            fw-bolder
-                            mb-lg-6
-                            fs-lg-4
-                          ">
+                        <h5 className="card-title text-primary mb-3 fs-5 fw-bolder mb-lg-6 fs-lg-4">
                           {title}
                         </h5>
                         <ul className="card-list list-style-none p-0 mb-lg-10">
