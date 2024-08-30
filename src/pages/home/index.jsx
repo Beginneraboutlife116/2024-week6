@@ -4,6 +4,7 @@ import FeaturedArticlesSection from "./featured-articles";
 import CallToActionSection from "./call-to-action";
 import HotsSection from "./hots";
 import LifeSection from "./life";
+import ProjectsSection from "./projects";
 
 import { useMediaQuery } from "../../lib/media-query-utils";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <CallToActionSection />
       <HotsSection isLargeScreen={isLargeScreen} />
       <LifeSection />
+      <ProjectsSection isLargeScreen={isLargeScreen} />
     </div>
   );
 }

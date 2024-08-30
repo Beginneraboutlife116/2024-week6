@@ -223,6 +223,18 @@ $utilities: map-merge(
           responsive: true,
         )
       ),
+    "gradient": (
+      property: background-image,
+      class: "gradient",
+      values: (
+        null:
+          linear-gradient(
+            359.16deg,
+            $gunmetal 0.73%,
+            rgba($gunmetal, 0.05) 99.27%
+          ),
+      ),
+    ),
   )
 );
 

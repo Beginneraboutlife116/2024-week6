@@ -7,6 +7,7 @@ import ArrowRightSvg from "./icons/arrow-right.svg";
 import ArrowLeftSvg from "./icons/arrow-left.svg";
 import ArrowRightPrimarySvg from "./icons/arrow-right-primary.svg";
 import ArrowRightWhiteSvg from "./icons/arrow-right-white.svg";
+import PlaySvg from "./icons/play.svg";
 
 import BannerSmPng from "./banners/banner-sm.png";
 import BannerPng from "./banners/banner.png";
@@ -47,6 +48,10 @@ import CardLife2Png from "./cards/life-2.png";
 import CardLife2SmPng from "./cards/life-2-sm.png";
 import CardLife3Png from "./cards/life-3.png";
 import CardLife3SmPng from "./cards/life-3-sm.png";
+import CardProjects1Png from "./cards/projects-1.png";
+import CardProjects2Png from "./cards/projects-2.png";
+import CardProjects3Png from "./cards/projects-3.png";
+import CardProjects4Png from "./cards/projects-4.png";
 
 export {
   LogoSmPng,
@@ -59,6 +64,7 @@ export {
   ArrowLeftSvg,
   ArrowRightPrimarySvg,
   ArrowRightWhiteSvg,
+  PlaySvg,
 
   // banners
   BannerSmPng,
@@ -102,4 +108,8 @@ export {
   CardLife2SmPng,
   CardLife3Png,
   CardLife3SmPng,
+  CardProjects1Png,
+  CardProjects2Png,
+  CardProjects3Png,
+  CardProjects4Png,
 };
