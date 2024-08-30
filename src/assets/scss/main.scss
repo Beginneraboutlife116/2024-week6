@@ -201,6 +201,13 @@ $utilities: map-merge(
           responsive: true,
         )
       ),
+    "line-height":
+      map-merge(
+        map-get($utilities, "line-height"),
+        (
+          responsive: true,
+        )
+      ),
   )
 );
 
@@ -211,5 +218,5 @@ $utilities: map-merge(
 // custom components and pages
 @import "base";
 @import "helpers";
-@import "components/buttons";
-@import "components/navbar";
+@import "components";
+@import "pages";

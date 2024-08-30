@@ -13,6 +13,7 @@ $primary: map.get(clr.$accent, 200);
 $secondary: map.get(clr.$neutral, 400);
 $tertiary: map.get(clr.$neutral, 300);
 $success: clr.$success;
+$honeydew: map.get(clr.$accent, 100);
 $info: clr.$info;
 $warning: clr.$warning;
 $danger: clr.$danger;
@@ -29,6 +30,7 @@ $theme-colors: (
   "secondary": $secondary,
   "tertiary": $tertiary,
   "success": $success,
+  "honeydew": $honeydew,
   "info": $info,
   "warning": $warning,
   "danger": $danger,

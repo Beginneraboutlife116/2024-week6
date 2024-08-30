@@ -1,0 +1,77 @@
+@use "../abstract/functions" as *;
+
+.call-to-action {
+  overflow: hidden;
+
+  ul {
+    list-style: none;
+
+    > li {
+      &::before {
+        content: url("/src/assets/images/icons/check.svg");
+        inline-size: rem(24);
+        block-size: rem(24);
+        margin-inline-end: map-get($spacers, 3);
+      }
+    }
+  }
+
+  &--cartoons {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      inset-inline-start: map-get($spacers, 2);
+      inset-block-end: -1 * map-get($spacers, 2);
+      inline-size: rem(217);
+      block-size: rem(81);
+      background-image: url("/src/assets/images/cartoons/cartoon-1.png");
+
+      @include media-breakpoint-up(lg) {
+        content: "";
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset-inline-end: -1 * map-get($spacers, 12);
+      inset-block-end: -1 * map-get($spacers, 3);
+      inline-size: rem(160);
+      block-size: rem(104);
+      background-image: url("/src/assets/images/cartoons/cartoon-2-sm.png");
+
+      @include media-breakpoint-up(lg) {
+        background-image: url("/src/assets/images/cartoons/cartoon-2.png");
+        inset-inline-end: -1 * map-get($spacers, 8);
+        inset-block-end: -1 * map-get($spacers, 2);
+        inline-size: rem(300);
+        block-size: rem(196);
+      }
+    }
+  }
+}
+
+.hots {
+  .list-group-item {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      inline-size: rem(4);
+      block-size: rem(4);
+      border-radius: 50%;
+      background-color: $dark;
+      margin-inline-end: map-get($spacers, 4);
+    }
+  }
+  .carousel {
+    ul > li {
+      &::before {
+        content: "|";
+        margin-inline: rem(4);
+      }
+    }
+  }
+}
