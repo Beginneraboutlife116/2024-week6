@@ -5,6 +5,7 @@ import CallToActionSection from "./call-to-action";
 import HotsSection from "./hots";
 import LifeSection from "./life";
 import ProjectsSection from "./projects";
+import ContactSection from "./contact";
 
 import { useMediaQuery } from "../../lib/media-query-utils";
 
@@ -22,6 +23,7 @@ export default function Home() {
       <HotsSection isLargeScreen={isLargeScreen} />
       <LifeSection />
       <ProjectsSection isLargeScreen={isLargeScreen} />
+      <ContactSection />
     </div>
   );
 }
