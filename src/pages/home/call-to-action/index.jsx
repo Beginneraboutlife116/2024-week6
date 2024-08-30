@@ -37,23 +37,23 @@ export default function CallToActionSection() {
         ">
           家庭訂閱方案限時 7 折
         </h3>
-        <ul className="text-secondary fw-semibold list-style-none ps-0 mb-6">
-          <li className="d-flex mb-4">
+        <ul className="text-secondary fw-semibold list-style-none ps-0 mb-6 mb-lg-10">
+          <li>
             <span>每月最新文章無限閱讀</span>
           </li>
-          <li className="d-flex mb-4">
+          <li>
             <span>專屬會員限定內容</span>
           </li>
-          <li className="d-flex mb-4">
+          <li>
             <span>定期電子報</span>
           </li>
-          <li className="d-flex mb-4">
+          <li>
             <span>年度精選禮物</span>
           </li>
-          <li className="d-flex mb-4">
+          <li>
             <span>24 /7 優先客戶服務</span>
           </li>
-          <li className="d-flex mb-lg-4">
+          <li>
             <span>為每個成員量身打造專屬行程</span>
           </li>
         </ul>

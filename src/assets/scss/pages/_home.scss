@@ -16,11 +16,19 @@
     ul {
       list-style: none;
 
-      > li::before {
-        content: url("/src/assets/images/icons/check.svg");
-        inline-size: rem(24);
-        block-size: rem(24);
-        margin-inline-end: map-get($spacers, 3);
+      > li {
+        display: flex;
+
+        &::before {
+          content: url("/src/assets/images/icons/check.svg");
+          inline-size: rem(24);
+          block-size: rem(24);
+          margin-inline-end: map-get($spacers, 3);
+        }
+
+        &:not(:last-child) {
+          margin-block-end: map-get($spacers, 4);
+        }
       }
     }
 

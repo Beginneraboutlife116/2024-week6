@@ -68,7 +68,7 @@ export default function Layout() {
               <ul className="navbar-nav align-items-lg-center column-gap-5 row-gap-6 lh-sm">
                 <li className="nav-item">
                   <NavLink
-                    className="nav-link px-3 px-lg-5"
+                    className="nav-link px-3 px-lg-5 link-dark"
                     aria-current={pathname === "/articles"}
                     to="/articles">
                     所有文章
@@ -76,7 +76,7 @@ export default function Layout() {
                 </li>
                 <li className="nav-item">
                   <NavLink
-                    className="nav-link px-3 px-lg-5"
+                    className="nav-link px-3 px-lg-5 link-dark"
                     aria-current={pathname === "/subscribe"}
                     to="/subscribe">
                     訂閱方案
@@ -84,7 +84,7 @@ export default function Layout() {
                 </li>
                 <li className="nav-item">
                   <NavLink
-                    className="nav-link px-3 px-lg-5"
+                    className="nav-link px-3 px-lg-5 link-dark"
                     aria-current={pathname === "/about-us"}
                     to="/about-us">
                     關於我們

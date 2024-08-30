@@ -56,10 +56,10 @@ const PREFIX_CLASS = "life";
 
 export default function LifeSection() {
   return (
-    <section className={`"container py-12 py-lg-20 ${PREFIX_CLASS})`}>
+    <section className={`container py-12 py-lg-20 | ${PREFIX_CLASS}`}>
       <div className="row mb-6 mb-lg-10 d-flex justify-content-between">
         <div className="col-auto">
-          <h2 className="">品味生活</h2>
+          <h2 className="fs-4 fs-lg-2 fw-bolder">品味生活</h2>
         </div>
         <div className="col-auto d-none d-lg-block">
           <div className="decoration">
@@ -69,36 +69,43 @@ export default function LifeSection() {
       </div>
       <div className="row gy-6">
         {Object.entries(LifeData).map(([key, { images, descriptions }]) => (
-          <div key={key} className="card border-0 bg-transparent col-lg-4">
-            <h3 className="card-title fs-1 text-gray mb-6 fs-lg-0 mb-lg-9">
-              {TitleMap[key]}.
-            </h3>
-            <picture>
-              <source srcSet={`${images.lg} 392w`} media="(min-width: 992px)" />
-              <img
-                src={images.sm}
-                className="card-img rounded-1 object-fit-cover"
-                alt={TitleMap[key]}
-              />
-            </picture>
-            <div className="card-body p-0 pt-6 pt-lg-9">
-              <ul className="card-list list-style-none p-0 mb-lg-9">
-                {descriptions.map((description) => (
-                  <li key={description} className="mb-5 fs-lg-5">
-                    <p className="card-text fw-bold lh-lg-sm">{description}</p>
-                  </li>
-                ))}
-              </ul>
-              <NavLink
-                to={`/life/${key}`}
-                className="btn custom-btn justify-content-center py-2 fw-bold text-primary">
-                View More
-                <img
-                  src={ArrowRightPrimarySvg}
-                  alt="View More"
-                  className="ms-3"
+          <div key={key} className="col-lg-4">
+            <div className="card border-0 bg-transparent">
+              <h3 className="card-title fs-1 text-gray mb-6 fs-lg-0 mb-lg-9">
+                {TitleMap[key]}.
+              </h3>
+              <picture>
+                <source
+                  srcSet={`${images.lg} 392w`}
+                  media="(min-width: 992px)"
                 />
-              </NavLink>
+                <img
+                  src={images.sm}
+                  className="card-img rounded-1 object-fit-cover"
+                  alt={TitleMap[key]}
+                />
+              </picture>
+              <div className="card-body p-0 pt-6 pt-lg-9">
+                <ul className="card-list list-style-none p-0 mb-6 mb-lg-9">
+                  {descriptions.map((description) => (
+                    <li key={description} className="mb-5">
+                      <p className="card-text fw-bolder lh-lg-sm fs-lg-5">
+                        {description}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+                <NavLink
+                  to={`/life/${key}`}
+                  className="btn custom-btn justify-content-center py-2 fw-bold link-primary">
+                  View More
+                  <img
+                    src={ArrowRightPrimarySvg}
+                    alt="View More"
+                    className="ms-3"
+                  />
+                </NavLink>
+              </div>
             </div>
           </div>
         ))}
