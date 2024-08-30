@@ -5,6 +5,7 @@ import AccentSearchSvg from "./icons/accent-search.svg";
 import CloseSvg from "./icons/close.svg";
 import ArrowRightSvg from "./icons/arrow-right.svg";
 import ArrowLeftSvg from "./icons/arrow-left.svg";
+import ArrowRightPrimarySvg from "./icons/arrow-right-primary.svg";
 import ArrowRightWhiteSvg from "./icons/arrow-right-white.svg";
 
 import BannerSmPng from "./banners/banner-sm.png";
@@ -31,6 +32,15 @@ import CardArticle1Png from "./cards/article-1.png";
 import CardArticle1SmPng from "./cards/article-1-sm.png";
 import CardArticle2Png from "./cards/article-2.png";
 import CardArticle2SmPng from "./cards/article-2-sm.png";
+import CardHots11Png from "./cards/hots-1-1.png";
+import CardHots12Png from "./cards/hots-1-2.png";
+import CardHots13Png from "./cards/hots-1-3.png";
+import CardHots14Png from "./cards/hots-1-4.png";
+import CardHots1SmPng from "./cards/hots-1-sm.png";
+import CardHots2SmPng from "./cards/hots-2-sm.png";
+import CardHots3SmPng from "./cards/hots-3-sm.png";
+import CardHots4SmPng from "./cards/hots-4-sm.png";
+import CardHots5SmPng from "./cards/hots-5-sm.png";
 
 export {
   LogoSmPng,
@@ -41,6 +51,7 @@ export {
   CloseSvg,
   ArrowRightSvg,
   ArrowLeftSvg,
+  ArrowRightPrimarySvg,
   ArrowRightWhiteSvg,
 
   // banners
@@ -70,4 +81,13 @@ export {
   CardArticle1SmPng,
   CardArticle2Png,
   CardArticle2SmPng,
+  CardHots11Png,
+  CardHots12Png,
+  CardHots13Png,
+  CardHots14Png,
+  CardHots1SmPng,
+  CardHots2SmPng,
+  CardHots3SmPng,
+  CardHots4SmPng,
+  CardHots5SmPng,
 };
