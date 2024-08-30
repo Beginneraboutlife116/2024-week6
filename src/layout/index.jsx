@@ -13,7 +13,7 @@ export default function Layout() {
 
   return (
     <>
-      <header className="fixed-top">
+      <header className="fixed-top bg-milk">
         <div className="container-fluid container-lg bg-milk">
           <nav
             className={clsx(
