@@ -9,7 +9,6 @@ import {
   CardLife3Png,
   CardLife3SmPng,
 } from "../../../assets/images";
-import clsx from "clsx";
 
 const LifeData = {
   eat: {
@@ -57,7 +56,7 @@ const PREFIX_CLASS = "life";
 
 export default function LifeSection() {
   return (
-    <section className={clsx("container py-12 py-lg-20", PREFIX_CLASS)}>
+    <section className={`"container py-12 py-lg-20 ${PREFIX_CLASS})`}>
       <div className="row mb-6 mb-lg-10 d-flex justify-content-between">
         <div className="col-auto">
           <h2 className="">品味生活</h2>

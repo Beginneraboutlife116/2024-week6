@@ -1,125 +1,127 @@
 @use "../abstract/functions" as *;
 
-.call-to-action {
-  overflow: hidden;
+.home {
+  .call-to-action {
+    overflow: hidden;
 
-  ul {
-    list-style: none;
+    ul {
+      list-style: none;
 
-    > li {
+      > li {
+        &::before {
+          content: url("/src/assets/images/icons/check.svg");
+          inline-size: rem(24);
+          block-size: rem(24);
+          margin-inline-end: map-get($spacers, 3);
+        }
+      }
+    }
+
+    &--cartoons {
+      position: relative;
+
       &::before {
-        content: url("/src/assets/images/icons/check.svg");
-        inline-size: rem(24);
-        block-size: rem(24);
-        margin-inline-end: map-get($spacers, 3);
-      }
-    }
-  }
-
-  &--cartoons {
-    position: relative;
-
-    &::before {
-      position: absolute;
-      inset-inline-start: map-get($spacers, 2);
-      inset-block-end: -1 * map-get($spacers, 2);
-      inline-size: rem(217);
-      block-size: rem(81);
-      background-image: url("/src/assets/images/cartoons/cartoon-1.png");
-
-      @include media-breakpoint-up(lg) {
-        content: "";
-      }
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      inset-inline-end: -1 * map-get($spacers, 12);
-      inset-block-end: -1 * map-get($spacers, 3);
-      inline-size: rem(160);
-      block-size: rem(104);
-      background-image: url("/src/assets/images/cartoons/cartoon-2-sm.png");
-
-      @include media-breakpoint-up(lg) {
-        background-image: url("/src/assets/images/cartoons/cartoon-2.png");
-        inset-inline-end: -1 * map-get($spacers, 8);
+        position: absolute;
+        inset-inline-start: map-get($spacers, 2);
         inset-block-end: -1 * map-get($spacers, 2);
-        inline-size: rem(300);
-        block-size: rem(196);
+        inline-size: rem(217);
+        block-size: rem(81);
+        background-image: url("/src/assets/images/cartoons/cartoon-1.png");
+
+        @include media-breakpoint-up(lg) {
+          content: "";
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset-inline-end: -1 * map-get($spacers, 12);
+        inset-block-end: -1 * map-get($spacers, 3);
+        inline-size: rem(160);
+        block-size: rem(104);
+        background-image: url("/src/assets/images/cartoons/cartoon-2-sm.png");
+
+        @include media-breakpoint-up(lg) {
+          background-image: url("/src/assets/images/cartoons/cartoon-2.png");
+          inset-inline-end: -1 * map-get($spacers, 8);
+          inset-block-end: -1 * map-get($spacers, 2);
+          inline-size: rem(300);
+          block-size: rem(196);
+        }
       }
     }
   }
-}
 
-.hots {
-  .list-group-item {
-    display: flex;
-    align-items: center;
+  .hots {
+    .list-group-item {
+      display: flex;
+      align-items: center;
 
-    &::before {
-      content: "";
-      inline-size: rem(4);
-      block-size: rem(4);
-      border-radius: 50%;
-      background-color: $dark;
-      margin-inline-end: map-get($spacers, 4);
+      &::before {
+        content: "";
+        inline-size: rem(4);
+        block-size: rem(4);
+        border-radius: 50%;
+        background-color: $dark;
+        margin-inline-end: map-get($spacers, 4);
+      }
+    }
+    .carousel {
+      ul > li {
+        &::before {
+          content: "|";
+          margin-inline: rem(4);
+        }
+      }
     }
   }
-  .carousel {
-    ul > li {
+
+  .life {
+    .card-list > li {
+      display: flex;
+      align-items: end;
+
       &::before {
         content: "|";
-        margin-inline: rem(4);
+        margin-inline: map-get($spacers, 1);
       }
     }
-  }
-}
 
-.life {
-  .card-list > li {
-    display: flex;
-    align-items: end;
-
-    &::before {
-      content: "|";
-      margin-inline: map-get($spacers, 1);
-    }
-  }
-
-  .card-img {
-    block-size: rem(192);
-  }
-
-  .decoration {
-    display: flex;
-    align-items: center;
-    color: $secondary;
-
-    > div {
-      inline-size: rem(80);
-      block-size: 1px;
-      margin-inline: map-get($spacers, 5);
-      background-color: $secondary;
+    .card-img {
+      block-size: rem(192);
     }
 
-    &::after,
-    &::before {
-      content: "";
-      min-inline-size: rem(56);
-      background-position: center;
-      background-repeat: no-repeat;
-      padding-block: map-get($spacers, 4);
-      border: 1px solid $secondary;
-      border-radius: 99em;
-    }
+    .decoration {
+      display: flex;
+      align-items: center;
+      color: $secondary;
 
-    &::before {
-      background-image: url("/src/assets/images/icons/arrow-left.svg");
-    }
+      > div {
+        inline-size: rem(80);
+        block-size: 1px;
+        margin-inline: map-get($spacers, 5);
+        background-color: $secondary;
+      }
 
-    &::after {
-      background-image: url("/src/assets/images/icons/arrow-right.svg");
+      &::after,
+      &::before {
+        content: "";
+        min-inline-size: rem(56);
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-block: map-get($spacers, 4);
+        border: 1px solid $secondary;
+        border-radius: 99em;
+      }
+
+      &::before {
+        background-image: url("/src/assets/images/icons/arrow-left.svg");
+      }
+
+      &::after {
+        background-image: url("/src/assets/images/icons/arrow-right.svg");
+      }
     }
   }
 }
