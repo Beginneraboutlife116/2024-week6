@@ -6,6 +6,7 @@ import Carousel from "bootstrap/js/dist/carousel";
 import BannerSection from "./banner";
 import ThemeSection from "./theme";
 import FeaturedArticlesSection from "./featured-articles";
+import CallToActionSection from "./call-to-action";
 import LifeSection from "./life";
 
 import { useMediaQuery } from "../../lib/media-query-utils";
@@ -157,39 +158,7 @@ export default function Home() {
       <BannerSection />
       <ThemeSection />
       <FeaturedArticlesSection isLargeScreen={isLargeScreen} />
-      <section className="bg-latte | call-to-action">
-        <div className="container d-flex flex-column align-items-center py-12 py-lg-20 | call-to-action--cartoons">
-          <h2 className="fs-6 fs-lg-4 text-primary text-lg-gray fw-bolder mb-3 mb-lg-5">
-            \ 母親節強檔活動 /{" "}
-          </h2>
-          <h3 className="h2 fw-bolder mb-6 mb-lg-5">家庭訂閱方案限時 7 折</h3>
-          <ul className="text-secondary fw-semibold list-style-none ps-0 mb-6">
-            <li className="d-flex mb-4">
-              <span>每月最新文章無限閱讀</span>
-            </li>
-            <li className="d-flex mb-4">
-              <span>專屬會員限定內容</span>
-            </li>
-            <li className="d-flex mb-4">
-              <span>定期電子報</span>
-            </li>
-            <li className="d-flex mb-4">
-              <span>年度精選禮物</span>
-            </li>
-            <li className="d-flex mb-4">
-              <span>24 /7 優先客戶服務</span>
-            </li>
-            <li className="d-flex mb-lg-4">
-              <span>為每個成員量身打造專屬行程</span>
-            </li>
-          </ul>
-          <NavLink
-            to="/subscribe"
-            className="btn custom-btn-primary rounded-pill custom-btn">
-            我想了解
-          </NavLink>
-        </div>
-      </section>
+      <CallToActionSection />
       <section className="container py-12 py-lg-20 | hots">
         <h2 className="mb-6 mb-lg-10">大家都在看</h2>
         <section className="row">

@@ -37,6 +37,8 @@ const articleData = [
   },
 ];
 
+const PREFIX_CLASS = "featured-articles";
+
 const propTypes = {
   isLargeScreen: PropTypes.bool,
 };
@@ -72,7 +74,7 @@ export default function FeaturedArticlesSection({ isLargeScreen = false }) {
   }, [articleIndex]);
 
   return (
-    <section className="container py-12 py-lg-20 | featured-articles">
+    <section className={`container py-12 py-lg-20 | ${PREFIX_CLASS}`}>
       <div
         className="
         row
