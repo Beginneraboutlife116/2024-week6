@@ -136,6 +136,7 @@ $utilities: map-merge(
       map-merge(
         map-get($utilities, "color"),
         (
+          responsive: true,
           state: (
             hover,
             focus,
@@ -189,6 +190,13 @@ $utilities: map-merge(
     "position":
       map-merge(
         map-get($utilities, "position"),
+        (
+          responsive: true,
+        )
+      ),
+    "font-size":
+      map-merge(
+        map-get($utilities, "font-size"),
         (
           responsive: true,
         )

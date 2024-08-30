@@ -18,6 +18,7 @@ $warning: clr.$warning;
 $danger: clr.$danger;
 $light: map.get(clr.$neutral, 200);
 $milk: map.get(clr.$primary, 100);
+$latte: map.get(clr.$primary, 200);
 $coffee: map.get(clr.$primary, 300);
 $gray: map.get(clr.$primary, 400);
 $dark: map.get(clr.$neutral, 500);
@@ -33,6 +34,7 @@ $theme-colors: (
   "danger": $danger,
   "light": $light,
   "milk": $milk,
+  "latte": $latte,
   "coffee": $coffee,
   "gray": $gray,
   "dark": $dark,
