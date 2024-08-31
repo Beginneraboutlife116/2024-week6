@@ -1,0 +1,33 @@
+.login {
+  .decoration {
+    display: flex;
+    align-items: center;
+    column-gap: map-get($spacers, 3);
+    inline-size: 100%;
+    color: $tertiary;
+
+    &::after,
+    &::before {
+      content: "";
+      flex-grow: 1;
+      block-size: 1px;
+      background-color: $tertiary;
+    }
+  }
+
+  input {
+    border: 1px solid $smoke;
+
+    &:not(:placeholder-shown):valid {
+      border-color: $success;
+    }
+
+    &:not(:placeholder-shown):invalid {
+      border-color: $danger;
+    }
+
+    &:focus:invalid {
+      border-color: $info;
+    }
+  }
+}

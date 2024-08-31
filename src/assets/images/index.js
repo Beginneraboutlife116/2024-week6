@@ -9,6 +9,9 @@ import ArrowRightPrimarySvg from "./icons/arrow-right-primary.svg";
 import ArrowRightWhiteSvg from "./icons/arrow-right-white.svg";
 import PlaySvg from "./icons/play.svg";
 
+import GooglePng from "./icons/google.png";
+import FacebookPng from "./icons/facebook.png";
+
 import BannerSmPng from "./banners/banner-sm.png";
 import BannerPng from "./banners/banner.png";
 
@@ -65,6 +68,8 @@ export {
   ArrowRightPrimarySvg,
   ArrowRightWhiteSvg,
   PlaySvg,
+  GooglePng,
+  FacebookPng,
 
   // banners
   BannerSmPng,

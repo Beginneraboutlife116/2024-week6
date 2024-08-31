@@ -5,6 +5,8 @@ import "./assets/scss/main.scss";
 
 import Layout from "./layout";
 import Home from "./pages/home";
+import Login from "./pages/login";
+import Signup from "./pages/signup";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,16 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/login",
+        action: Login.action,
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        action: Signup.action,
+        element: <Signup />,
       },
     ],
   },
