@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import {
   Theme1Png,
   Theme1SmPng,
@@ -101,14 +103,7 @@ export default function ThemeSection() {
       <div className="row gy-2 gy-lg-6">
         {themeData.map(({ id, title, images }) => (
           <div key={id} className="col-lg-3">
-            <div
-              className="
-              card
-              text-bg-dark
-              border-0
-              rounded-x-6
-              rounded-y-0
-              ">
+            <div className="card text-bg-dark border-0 rounded-x-6 rounded-y-0">
               <picture>
                 <source
                   srcSet={`${images.lg} 306w`}
@@ -122,20 +117,17 @@ export default function ThemeSection() {
               </picture>
               <div
                 className="
-                card-img-overlay
-                d-flex
-                align-items-center
-                justify-content-center
-                ">
-                <h3
-                  className="
-                  card-title
-                  fs-6
-                  fs-lg-5
-                  fw-bolder
-                  mb-0
+                  card-img-overlay
+                  d-flex
+                  align-items-center
+                  justify-content-center
                   ">
-                  {title}
+                <h3 className="mb-0">
+                  <NavLink
+                    to={`/theme/${id}`}
+                    className="card-title fs-6 fs-lg-5 fw-bolder text-decoration-none stretched-link">
+                    <span>{title}</span>
+                  </NavLink>
                 </h3>
               </div>
             </div>

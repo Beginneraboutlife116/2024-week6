@@ -17,9 +17,9 @@ const LifeData = {
       lg: CardLife1Png,
     },
     descriptions: [
-      "米其林三星主廚的那些絕活傳奇",
-      "探秘成都的地道川味秘技與魅力",
-      "義大利釀酒師對於酒的堅持執著",
+      { id: 1, slogan: "米其林三星主廚的那些絕活傳奇" },
+      { id: 2, slogan: "探秘成都的地道川味秘技與魅力" },
+      { id: 3, slogan: "義大利釀酒師對於酒的堅持執著" },
     ],
   },
   art: {
@@ -28,9 +28,9 @@ const LifeData = {
       lg: CardLife2Png,
     },
     descriptions: [
-      "解構教主級時裝設計大師的獨...",
-      "當代攝影師鏡頭中的光影離奇",
-      "帶你穿縮中世紀，夏季文藝復興展",
+      { id: 4, slogan: "解構教主級時裝設計大師的獨..." },
+      { id: 5, slogan: "當代攝影師鏡頭中的光影離奇" },
+      { id: 6, slogan: "帶你穿縮中世紀，夏季文藝復興展" },
     ],
   },
   travel: {
@@ -39,9 +39,9 @@ const LifeData = {
       lg: CardLife3Png,
     },
     descriptions: [
-      "專賣奇珍異寶的東歐地下夜市",
-      "東京深度六區,帶你細品極簡魅力",
-      "遠離喧囂,偶探巴塔哥尼亞終界",
+      { id: 7, slogan: "專賣奇珍異寶的東歐地下夜市" },
+      { id: 8, slogan: "東京深度六區,帶你細品極簡魅力" },
+      { id: 9, slogan: "遠離喧囂,偶探巴塔哥尼亞終界" },
     ],
   },
 };
@@ -86,12 +86,14 @@ export default function LifeSection() {
                 />
               </picture>
               <div className="card-body p-0 pt-6 pt-lg-9">
-                <ul className="card-list list-style-none p-0 mb-6 mb-lg-9">
+                <ul className="card-list list-unstyled p-0 mb-6 mb-lg-9">
                   {descriptions.map((description) => (
-                    <li key={description} className="mb-5">
-                      <p className="card-text fw-bolder lh-lg-sm fs-lg-5">
-                        {description}
-                      </p>
+                    <li key={description.id} className="mb-5">
+                      <NavLink
+                        to={`/life/${description.id}`}
+                        className="card-text fw-bolder lh-lg-sm fs-lg-5 text-decoration-none text-dark text-primary-hover">
+                        {description.slogan}
+                      </NavLink>
                     </li>
                   ))}
                 </ul>

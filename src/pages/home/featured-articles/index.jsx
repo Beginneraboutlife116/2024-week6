@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import clsx from "clsx";
 import Carousel from "bootstrap/js/dist/carousel";
 
@@ -49,6 +51,8 @@ export default function FeaturedArticlesSection({ isLargeScreen = false }) {
   const [articleIndex, setArticleIndex] = useState(0);
   const carouselRef = useRef(null);
   const bootstrapCarouselRef = useRef(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (carouselRef.current) {
@@ -141,8 +145,9 @@ export default function FeaturedArticlesSection({ isLargeScreen = false }) {
                         />
                         <img
                           src={images.sm}
-                          className="card-img-top mb-6"
+                          className="card-img-top mb-6 opacity-70-hover pointer"
                           alt=""
+                          onClick={() => navigate(`/articles/${id}`)}
                         />
                       </picture>
                       <div className="card-body p-0">
@@ -150,8 +155,8 @@ export default function FeaturedArticlesSection({ isLargeScreen = false }) {
                         <p className="card-text text-secondary fw-semibold mb-6">
                           {description}
                         </p>
-                        <a
-                          href="#"
+                        <NavLink
+                          to={`/articles/${id}`}
                           className="btn custom-btn custom-btn-only-text px-0 py-2 justify-content-between">
                           <span className="fw-bold fs-5 letter-spacing-headings">
                             Read More
@@ -161,7 +166,7 @@ export default function FeaturedArticlesSection({ isLargeScreen = false }) {
                               會員專屬
                             </span>
                           )}
-                        </a>
+                        </NavLink>
                       </div>
                     </div>
                   </div>

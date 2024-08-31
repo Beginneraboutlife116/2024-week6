@@ -235,6 +235,26 @@ $utilities: map-merge(
           ),
       ),
     ),
+    "opacity":
+      map-merge(
+        map-get($utilities, "opacity"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "opacity"), "values"),
+              (
+                70: 0.7,
+              )
+            ),
+          state: "hover",
+        )
+      ),
+    "cursor": (
+      property: cursor,
+      state: "disabled",
+      class: null,
+      values: pointer not-allowed,
+    ),
   )
 );
 
@@ -244,6 +264,5 @@ $utilities: map-merge(
 
 // custom components and pages
 @import "base";
-@import "helpers";
 @import "components";
 @import "pages";

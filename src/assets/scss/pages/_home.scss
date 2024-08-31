@@ -1,6 +1,23 @@
 @use "../abstract/functions" as *;
 
 .home {
+  .theme {
+    .card-title:hover::after {
+      background-image: linear-gradient(
+          0deg,
+          rgba($black, 0.2),
+          rgba($black, 0.2)
+        ),
+        linear-gradient(0deg, rgba($dark, 0.4), rgba($dark, 0.4));
+      border-radius: 20px 0 20px 0;
+
+      span {
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+
   .featured-articles {
     .decoration {
       inline-size: rem(80);
@@ -83,9 +100,13 @@
       }
     }
     .carousel {
-      ul > li {
+      .card-text {
+        display: flex;
+        align-items: end;
+
         &::before {
           content: "|";
+          color: inherit;
           margin-inline: rem(4);
         }
       }
@@ -93,13 +114,14 @@
   }
 
   .life {
-    .card-list > li {
+    .card-text {
       display: flex;
       align-items: end;
 
       &::before {
         content: "|";
         margin-inline: map-get($spacers, 1);
+        color: inherit;
       }
     }
 

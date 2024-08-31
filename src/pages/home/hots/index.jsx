@@ -22,9 +22,9 @@ const hotsData = [
     id: 1,
     title: "酒精路跑地圖",
     descriptions: [
-      "城市酒吧人氣榜,盤點當紅熱門酒吧",
-      "你要的調酒師在這裡！五月全台酒...",
-      "台南老宅手工酒藏,尋味百年人文釀意",
+      { id: 1, slogan: "城市酒吧人氣榜,盤點當紅熱門酒吧" },
+      { id: 2, slogan: "你要的調酒師在這裡！五月全台酒..." },
+      { id: 3, slogan: "台南老宅手工酒藏,尋味百年人文釀意" },
     ],
     images: {
       sm: CardHots1SmPng,
@@ -36,9 +36,9 @@ const hotsData = [
     id: 2,
     title: "台北拉麵圖鑑",
     descriptions: [
-      "城市酒吧人氣榜,盤點當紅熱門酒吧",
-      "你要的調酒師在這裡！五月全台酒...",
-      "台南老宅手工酒藏,尋味百年人文釀意",
+      { id: 4, slogan: "城市酒吧人氣榜,盤點當紅熱門酒吧" },
+      { id: 5, slogan: "你要的調酒師在這裡！五月全台酒..." },
+      { id: 6, slogan: "台南老宅手工酒藏,尋味百年人文釀意" },
     ],
     images: {
       sm: CardHots2SmPng,
@@ -50,9 +50,9 @@ const hotsData = [
     id: 3,
     title: "海島自由行",
     descriptions: [
-      "私島慢活島嶼生活 - 在熱帶天堂品...",
-      "海島漂流記 - 在陽光、沙灘和比基...",
-      "島嶼蹤跡 - 揭開加勒比海上世外桃...",
+      { id: 7, slogan: "私島慢活島嶼生活 - 在熱帶天堂品..." },
+      { id: 8, slogan: "海島漂流記 - 在陽光、沙灘和比基..." },
+      { id: 9, slogan: "島嶼蹤跡 - 揭開加勒比海上世外桃..." },
     ],
     images: {
       sm: CardHots3SmPng,
@@ -64,9 +64,9 @@ const hotsData = [
     id: 4,
     title: "短天數出國推薦",
     descriptions: [
-      "72小時東京遊走 - 當個時尚東京通",
-      "48小時曼谷遊玩全攻略",
-      "三天兩夜賞櫻微醺東京",
+      { id: 10, slogan: "72小時東京遊走 - 當個時尚東京通" },
+      { id: 11, slogan: "48小時曼谷遊玩全攻略" },
+      { id: 12, slogan: "三天兩夜賞櫻微醺東京" },
     ],
     images: {
       sm: CardHots4SmPng,
@@ -78,9 +78,9 @@ const hotsData = [
     id: 5,
     title: "週末露營趣",
     descriptions: [
-      "週末說走就走露營記",
-      "城市野營日記",
-      "和寵物去露營 - 大自然之旅的雙倍...",
+      { id: 13, slogan: "週末說走就走露營記" },
+      { id: 14, slogan: "城市野營日記" },
+      { id: 15, slogan: "和寵物去露營 - 大自然之旅的雙倍..." },
     ],
     images: {
       sm: CardHots5SmPng,
@@ -186,14 +186,14 @@ export default function HotsSection({ isLargeScreen = false }) {
                         <h5 className="card-title text-primary mb-3 fs-5 fw-bolder mb-lg-6 fs-lg-4">
                           {title}
                         </h5>
-                        <ul className="card-list list-style-none p-0 mb-lg-10">
+                        <ul className="card-list list-unstyled p-0 mb-lg-10">
                           {descriptions.map((description) => (
-                            <li
-                              key={description}
-                              className="d-flex align-items-end mb-2 mb-lg-5">
-                              <p className="card-text fw-semibold fw-lg-bold lh-lg-sm">
-                                {description}
-                              </p>
+                            <li key={description.id} className="mb-2 mb-lg-5">
+                              <NavLink
+                                to={`/hots/${id}/${description.id}`}
+                                className="card-text fw-semibold fw-lg-bold lh-lg-sm text-decoration-none text-dark text-primary-hover">
+                                {description.slogan}
+                              </NavLink>
                             </li>
                           ))}
                         </ul>
