@@ -34,7 +34,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    base: BASE_URL,
+    basename: BASE_URL,
   }
 );
 
