@@ -8,28 +8,35 @@ import Home from "./pages/home";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 
-const router = createBrowserRouter([
+const { BASE_URL } = import.meta.env;
+
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "/login",
+          action: Login.action,
+          element: <Login />,
+        },
+        {
+          path: "/signup",
+          action: Signup.action,
+          element: <Signup />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "/login",
-        action: Login.action,
-        element: <Login />,
-      },
-      {
-        path: "/signup",
-        action: Signup.action,
-        element: <Signup />,
-      },
-    ],
-  },
-]);
+    base: BASE_URL,
+  }
+);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
