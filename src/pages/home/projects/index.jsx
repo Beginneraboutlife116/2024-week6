@@ -51,11 +51,13 @@ export default function ProjectsSection({ isLargeScreen }) {
   const bootstrapCarouselRef = useRef(null);
 
   useEffect(() => {
-    if (carouselRef.current) {
+    if (carouselRef.current && !isLargeScreen) {
       bootstrapCarouselRef.current = new Carousel(carouselRef.current, {
+        pause: "hover",
         interval: 2000,
         touch: true,
       });
+      bootstrapCarouselRef.current.cycle();
     }
 
     return () => {
@@ -63,7 +65,7 @@ export default function ProjectsSection({ isLargeScreen }) {
         bootstrapCarouselRef.current.dispose();
       }
     };
-  }, []);
+  }, [isLargeScreen]);
 
   return (
     <section className="bg-latte">

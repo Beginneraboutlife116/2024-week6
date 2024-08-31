@@ -104,27 +104,22 @@ export default function HotsSection({ isLargeScreen = false }) {
   useEffect(() => {
     if (carouselRef.current) {
       bootstrapCarouselRef.current = new Carousel(carouselRef.current, {
+        pause: "hover",
         interval: 2000,
         touch: true,
       });
+      bootstrapCarouselRef.current.to(0);
+
+      if (!isLargeScreen) {
+        bootstrapCarouselRef.current.cycle();
+      }
     }
     return () => {
       if (bootstrapCarouselRef.current) {
         bootstrapCarouselRef.current.dispose();
+        setHotIndex(0);
       }
     };
-  }, []);
-
-  useEffect(() => {
-    if (bootstrapCarouselRef.current) {
-      if (!isLargeScreen) {
-        bootstrapCarouselRef.current.cycle();
-      } else {
-        bootstrapCarouselRef.current.pause();
-      }
-      bootstrapCarouselRef.current.to(0);
-      setHotIndex(0);
-    }
   }, [isLargeScreen]);
 
   function _renderHotImages({ id, images, title }) {
